@@ -37,6 +37,9 @@ int  ll_index(linkedlist_t*, int);
 /** Print all elements in the LinkedList */
 void ll_print(linkedlist_t*);
 
+/** Traverses the LinkedList executing action for each element. Stops when action returns false. */
+void ll_traverse(linkedlist_t*, bool (*)(int*));
+
 /** Free all elements and the List itself */
 void ll_free(linkedlist_t*);
 

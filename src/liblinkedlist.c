@@ -190,6 +190,18 @@ void ll_print(linkedlist_t* list)
     printf("\n");
 }
 
+void ll_traverse(linkedlist_t* list, bool (*action)(int*))
+{
+    node_t* current = list->head;
+
+    while (current) {
+        if (!action(&current->value))
+            return;
+
+        current = current->next;
+    }
+}
+
 void ll_free(linkedlist_t* list)
 {
     node_t* current = list->head;
@@ -202,4 +214,3 @@ void ll_free(linkedlist_t* list)
 
     free(list);
 }
-
